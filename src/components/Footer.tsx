@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Heart, DollarSign, Users, MessageCircle } from 'lucide-react';
+import { DollarSign, Users, MessageCircle, Heart } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (

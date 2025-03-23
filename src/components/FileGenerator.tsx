@@ -37,8 +37,9 @@ const FileGenerator: React.FC = () => {
     
     // Create folder structure
     const modFolder = zip.folder(config.modFolderName);
-    const addonsFolder = modFolder?.folder('addons');
-    const keysFolder = modFolder?.folder('keys');
+    // Create these folders but don't need to store references since we don't use them later
+    modFolder?.folder('addons');
+    modFolder?.folder('keys');
     
     // Add mod.cpp to the mod folder
     modFolder?.file('mod.cpp', modCpp);
@@ -52,7 +53,8 @@ const FileGenerator: React.FC = () => {
     
     // Create data folder
     const dataFolder = mapFolder?.folder('data');
-    const layersFolder = dataFolder?.folder('layers');
+    // Create layers folder without storing reference
+    dataFolder?.folder('layers');
     
     // Create env folder
     const envFolder = mapFolder?.folder('env');
