@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Step } from '../types';
-import { Map, Tool, FileDown, Code, Package, Server, TestTube } from 'lucide-react';
+import { Map, FileDown, Code, Package, Server, TestTube } from 'lucide-react';
 
 interface StepCardProps {
   step: Step;
@@ -15,7 +15,8 @@ const StepCard: React.FC<StepCardProps> = ({ step, completed, onToggleComplete }
       case 'Map':
         return <Map className="w-5 h-5" />;
       case 'Tool':
-        return <Tool className="w-5 h-5" />;
+        // Use a different icon since Tool is not available
+        return <Code className="w-5 h-5" />;
       case 'FileDown':
         return <FileDown className="w-5 h-5" />;
       case 'Code':

@@ -19,7 +19,7 @@ const FileGenerator: React.FC = () => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setConfig(prev => ({ ...prev, [name]: value }));
+    setConfig(prevConfig => ({ ...prevConfig, [name]: value }));
   };
 
   const configCpp = generateConfigCpp(config);

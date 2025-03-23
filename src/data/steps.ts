@@ -1,5 +1,6 @@
 import { Step } from '../types';
-import { Map, Tool, FileDown, Code, Package, Server, TestTube } from 'lucide-react';
+// Remove the Tool import since it's not available
+import { Map, FileDown, Code, Package, Server, TestTube } from 'lucide-react';
 
 export const steps: Step[] = [
   {
@@ -27,7 +28,7 @@ export const steps: Step[] = [
       }
     ],
     completed: false,
-    icon: 'Tool'
+    icon: 'Tool' // This will use the Code icon as a fallback in StepCard.tsx
   },
   {
     id: 'terrain-sample',
