@@ -2,21 +2,19 @@ export interface Step {
   id: string;
   title: string;
   description: string;
-  category?: string;
-  difficulty?: 'beginner' | 'intermediate' | 'advanced';
-  estimatedTime?: string;
-  content?: string;
   videoUrl?: string;
+  videoEmbed?: string;
   downloadLinks?: DownloadLink[];
   codeSnippet?: string;
   language?: string;
   completed?: boolean;
+  icon?: string;
 }
 
 export interface DownloadLink {
   name: string;
   url: string;
-  description: string;
+  description?: string;
 }
 
 export interface Note {
@@ -25,10 +23,4 @@ export interface Note {
   timestamp: number;
 }
 
-export interface MapConfig {
-  mapName: string;
-  modFolderName: string;
-  authorName: string;
-  description: string;
-  customUrl: string;
-}
+export type Theme = 'light' | 'dark';

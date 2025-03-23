@@ -1,56 +1,41 @@
 import React from 'react';
-import { DollarSign, Users, MessageCircle, Heart } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[var(--primary)] text-white py-6">
+    <footer className="bg-white dark:bg-gray-800 shadow-md py-6 mt-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <p className="text-sm">
-              &copy; {new Date().getFullYear()} DZ Academy - DayZ Map Builder Guide
-            </p>
-            <p className="text-xs text-gray-300 mt-1">
-              A comprehensive guide to creating custom maps for DayZ by Big Grampa
+            <p className="text-gray-600 dark:text-gray-300 text-sm">
+              © {new Date().getFullYear()} DZ Academy - Big Grampa. All rights reserved.
             </p>
           </div>
           
-          <div className="flex flex-col items-center space-y-3 md:space-y-0 md:flex-row md:space-x-4">
-            <a 
-              href="https://streamlabs.com/biggrampa" 
-              className="text-gray-300 hover:text-white transition-colors flex items-center"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <DollarSign size={18} className="mr-1" />
-              <span>Tip Page</span>
-            </a>
-            
-            <a 
-              href="https://www.patreon.com/dayz_tutorial" 
-              className="text-gray-300 hover:text-white transition-colors flex items-center"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Users size={18} className="mr-1" />
-              <span>Patreon</span>
-            </a>
-            
+          <div className="flex space-x-4">
             <a 
               href="https://discord.gg/F7ctZX7" 
-              className="text-gray-300 hover:text-white transition-colors flex items-center"
-              target="_blank"
+              target="_blank" 
               rel="noopener noreferrer"
+              className="text-gray-600 dark:text-gray-300 hover:text-[var(--accent)] transition-colors"
             >
-              <MessageCircle size={18} className="mr-1" />
-              <span>Join Discord</span>
+              Discord
             </a>
-            
-            <div className="flex items-center text-sm">
-              <span className="mr-1">Made with</span>
-              <Heart size={16} className="text-[var(--accent)] mx-1" />
-              <span>for the DayZ community</span>
-            </div>
+            <a 
+              href="https://www.patreon.com/biggrampa" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-600 dark:text-gray-300 hover:text-[var(--accent)] transition-colors"
+            >
+              Patreon
+            </a>
+            <a 
+              href="https://www.youtube.com/channel/UCbKQsW7PfZlU4-nAOqKxOuQ" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-600 dark:text-gray-300 hover:text-[var(--accent)] transition-colors"
+            >
+              YouTube
+            </a>
           </div>
         </div>
       </div>

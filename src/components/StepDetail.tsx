@@ -103,17 +103,21 @@ const StepDetail: React.FC<StepDetailProps> = ({
             <p>{currentStep.description}</p>
           </div>
           
-          {currentStep.videoUrl && (
+          {(currentStep.videoUrl || currentStep.videoEmbed) && (
             <div className="mb-8">
               <h3 className="text-lg font-medium mb-3">Video Tutorial</h3>
               <div className="aspect-w-16 aspect-h-9">
-                <iframe 
-                  src={currentStep.videoUrl} 
-                  title={`${currentStep.title} Tutorial`}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowFullScreen
-                  className="w-full h-[400px] border-0"
-                ></iframe>
+                {currentStep.videoEmbed ? (
+                  <div dangerouslySetInnerHTML={{ __html: currentStep.videoEmbed }} />
+                ) : currentStep.videoUrl ? (
+                  <iframe 
+                    src={currentStep.videoUrl} 
+                    title={`${currentStep.title} Tutorial`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowFullScreen
+                    className="w-full h-[400px] border-0"
+                  ></iframe>
+                ) : null}
               </div>
             </div>
           )}
