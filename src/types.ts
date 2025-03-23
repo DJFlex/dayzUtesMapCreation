@@ -24,3 +24,11 @@ export interface Note {
 }
 
 export type Theme = 'light' | 'dark';
+
+export interface MapConfig {
+  mapName: string;
+  modFolderName: string;
+  authorName: string;
+  description: string;
+  customUrl: string;
+}
